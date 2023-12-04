@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}">
+    <script src="{{ url_for('static', path='js/script.js') }}" defer></script>
+    <title>Chatbot</title>
+</head>
+<body>
+
+    <div id="chat-container">
+        <!-- Chat messages will be dynamically added here -->
+        <div class="chat-message bot-message">Bot: Hi There! How may I assist you...</div>
+    </div>
+    
+    <div id="help-options">
+        {% for option in help_options %}
+            <button onclick="openManual('{{ option }}')" class="button">{{ option }}</button>
+        {% endfor %}
+    </div>
+
+    <div id="user-input-container">
+        <input type="text" id="user-input" placeholder="Type your message" onkeypress="handleKeyPress(event)">
+        <button onclick="sendUserMessage(document.getElementById('user-input').value)">Send</button>
+    </div>
+
+</body>
+</html>
