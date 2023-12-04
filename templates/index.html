@@ -8,8 +8,12 @@
     <title>Chatbot</title>
 </head>
 <body>
-
+    <button onclick="clearMessages()" class="button" id="clear">Clear Chat</button>
+    <span id="cleared-message"></span>
     <div id="chat-container">
+        {% for message in messages %}
+            <div class="chat-message {{message[0]}}-message">{{message[1]}}</div>
+        {% endfor %}
         <!-- Chat messages will be dynamically added here -->
         <div class="chat-message bot-message">Bot: Hi There! How may I assist you...</div>
     </div>
@@ -17,6 +21,11 @@
     <div id="help-options">
         {% for option in help_options %}
             <button onclick="openManual('{{ option }}')" class="button">{{ option }}</button>
+        {% endfor %}
+        {% for pdf in pdfs %}
+            <ol>
+                <li>pdf</li>
+            </ol>
         {% endfor %}
     </div>
 

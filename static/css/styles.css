@@ -12,6 +12,15 @@ body {
     height: 100vh;
 }
 
+button#clear{
+    margin-left: auto;
+    padding: 8px;
+    background-color: #870000;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 #chat-container {
     width: 700px;
     height: 400px;
@@ -114,4 +123,25 @@ body {
 
 .button:hover {
     background-color: #2980b9; /* Change color on hover if desired */
+}
+
+#cleared-message {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2%;
+    background-color: rgb(157 202 157);
+    color: rgb(57 96 74);
+    padding: 2px 10px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+#cleared-message.show {
+    opacity: 1;
+}
+
+#cleared-message.fade-out {
+    opacity: 0;
 }
